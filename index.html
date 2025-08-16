@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sliderWrapper">
+            <div class="slider">
+                <img id="img1" src="https://img.freepik.com/premium-vector/cranberry-cream-contained-tubes-with-cranberry-elements-cream-flows-3d-illustration_317810-63.jpg" alt="">
+                <img id="img2" src="https://img.freepik.com/free-photo/care-products-plants-arrangement_23-2149879994.jpg" alt="">
+                <img id="img3" src="https://img.freepik.com/free-photo/3d-rendering-personal-care-products-fondant-pink_23-2151053819.jpg" alt="">
+            </div>
+            <div class="sliderNav">
+                <a href="#img1"></a>
+                <a href="#img2"></a>
+                <a href="#img3"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        let num = 0;
+      
+        function autoSlide() {
+          num++;
+          if (num >= slider.children.length) {
+            num = 0;
+          }
+          slider.scrollTo({
+            left: slider.clientWidth * num,
+            behavior: "smooth",
+          });
+        }
+        setInterval(autoSlide, 5000);
+      </script>
+      
+</body>
+</html>
